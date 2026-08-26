@@ -1,0 +1,45 @@
+:ON ERROR EXIT
+
+PRINT 'PaymentProjectDW installation started.';
+GO
+
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\01_schema\01_Database_Setup.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\01_schema\02_DimDate.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\01_schema\03_DimCustomer.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\01_schema\04_DimCard.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\01_schema\05_DimMerchant.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\01_schema\06_DimPaymentChannel.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\01_schema\07_DimCurrency.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\01_schema\08_DimTransactionStatus.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\01_schema\09_DimDevice.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\01_schema\10_DimFraudReason.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\01_schema\11_FactPaymentTransaction.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\02_seed\01_DimDate_Data.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\02_seed\02_DimCurrency_Data.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\02_seed\03_DimPaymentChannel_Data.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\02_seed\04_DimTransactionStatus_Data.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\02_seed\05_DimFraudReason_Data.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\02_seed\06_DimCustomer_Synthetic_Data.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\02_seed\07_DimCard_Synthetic_Data.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\02_seed\08_DimMerchant_Synthetic_Data.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\02_seed\09_DimDevice_Synthetic_Data.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\02_seed\10_FactPaymentTransaction_1M.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\03_reporting\01_vwPaymentTransactionDetail.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\03_reporting\02_vwMonthlyChannelPerformance.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\03_reporting\03_vwMerchantPerformance.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\03_reporting\04_vwFraudTransactionDetail.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\03_reporting\05_vwCustomerSegmentPerformance.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\03_reporting\06_usp_GetPaymentSummary.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\03_reporting\07_usp_GetTopMerchantPerformance.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\04_etl\01_ETL_Control.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\04_etl\02_Staging.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\04_etl\03_Validation.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\04_etl\04_Incremental_Fact_Load.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\05_analytics\01_Performance_Indexes.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\05_analytics\02_Window_Analytics.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\05_analytics\03_Indexed_View_Optimization.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\05_analytics\04_Database_Security.sql"
+:r "C:\Users\alper\OneDrive\Belgeler\PaymentProjectDW\sql\05_analytics\05_Health_Check.sql"
+
+PRINT 'PaymentProjectDW installation completed.';
+GO

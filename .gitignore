@@ -1,0 +1,18 @@
+# SQL Server database and backup files
+*.bak
+*.mdf
+*.ndf
+*.ldf
+*.trn
+*.xel
+
+# Local execution artifacts
+*.sqlplan
+*.log
+.vs/
+*.suo
+*.user
+
+# Operating-system files
+.DS_Store
+Thumbs.db
