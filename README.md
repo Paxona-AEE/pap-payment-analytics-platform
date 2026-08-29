@@ -46,6 +46,8 @@ The Power BI layer transforms the SQL Server data warehouse into an interactive 
 
 The downloadable Power BI Desktop file is distributed through the repository's GitHub Releases section.
 
+[Download the Power BI Dashboard (.pbix)]((https://github.com/Paxona-AEE/payment-analytics-data-warehouse/releases/tag/power-bi-v1.0.0))
+
 ## Requirements
 
 - Microsoft SQL Server 2022 Developer or Express Edition
