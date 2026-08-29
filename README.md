@@ -1,6 +1,6 @@
 # Payment Analytics Platform
 
-An end-to-end payment analytics project built with Microsoft SQL Server and Power BI. The project models a payment-processing data warehouse, generates one million synthetic payment transactions, implements an incremental staging-to-fact ETL pipeline, and presents the resulting business insights through an interactive Power BI dashboard.
+Welcome, this is an comprehensive payment analytics project built with Microsoft SQL Server and Power BI. The project models a payment-processing data warehouse, generates one million synthetic payment transactions, implements an incremental staging-to-fact ETL pipeline, and presents the resulting business insights through an interactive Power BI dashboard.
 
 > All customers, cards, merchants, devices, and transactions in this repository are synthetic. No real payment or personal data is included.
 
@@ -12,7 +12,6 @@ An end-to-end payment analytics project built with Microsoft SQL Server and Powe
 - Reporting views and parameterized stored procedures for payment, merchant, fraud, channel, and customer-segment analysis
 - Window-function examples, covering indexes, and a schema-bound indexed view
 - Database roles for report readers, ETL operators, and auditors
-- Rerunnable object creation guards for a clean installation
 - Power BI semantic model with reusable DAX measures and dedicated date intelligence
 - Four dashboard pages covering executive, merchant, customer, card, fraud, and operational performance
 - Synced slicers, bookmarks, report-page tooltips, conditional formatting, and payment-channel drill-through
@@ -58,13 +57,13 @@ The downloadable Power BI Desktop file is distributed through the repository's G
 
 Clone or download the repository, open a terminal and run:
 
-In SSMS, enable **Query → SQLCMD Mode**, open `run_all.sql` from the repository root, and execute it. The `:r` directives run every setup file in dependency order. The one-million-row generator can take several minutes depending on hardware.
+In SSMS, enable **Query → SQLCMD Mode**, open `run_all.sql` from the repository, and execute it. The `:r` run every setup file in dependency order. Also the one-million-row generator can take several minutes depending on hardware.
 
 For the cleanest result, run the project against a new `PaymentProjectDW` database. The scripts do not attempt to migrate an older SCD Type 2 version of the schema.
 
 ## Optional tests
 
-Tests are intentionally excluded from `run_all.sql`:
+Tests are excluded from `run_all.sql`:
 
 1. Run `tests/01_End_to_End_ETL_Test.sql` to insert one valid staging row, validate it, load it into the fact table, and display its lineage.
 2. Run `tests/02_Indexed_View_Performance_Test.sql` with the actual execution plan enabled to compare the expanded normal view with the indexed view using `NOEXPAND`.
@@ -98,13 +97,13 @@ sql/05_analytics    Indexes, window queries, indexed view, security, health chec
 tests               Optional performance tests
 docs                Architecture and operating notes
 run_all.sql         SQLCMD-mode installation point
-power-bi             Power BI documentation and DAX reference
-docs/screenshots     Dashboard page screenshots
+power-bi            Power BI documentation and DAX reference
+docs/screenshots    Dashboard page screenshots
 ```
 
 ## Design notes
 
-- `TransactionID` is unique in the fact table, supporting incremental loads
+- `TransactionID` is unique in the fact table, supporting further loads
 - Unknown dimension members use surrogate key `0` so incomplete source records can be handled explicitly
 - `SET XACT_ABORT ON` and `TRY...CATCH` to protect multi-step ETL transactions
 - ETL procedures validate prerequisites and record success, failure, skipped runs, row counts, and error details
