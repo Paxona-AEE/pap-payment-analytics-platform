@@ -25,8 +25,6 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the data model and ETL flow
 
 The Power BI layer transforms the SQL Server data warehouse into an interactive payment-performance reporting experience.
 
-![Payment Analytics Executive Overview](docs/screenshots/01-executive-overview.png)
-
 ### Dashboard pages
 
 | Page | Analytical focus |
